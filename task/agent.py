@@ -72,8 +72,7 @@ class MASCoordinator:
                         "schema": CoordinationRequest.model_json_schema()
                     }
                 },
-            },
-            api_version="2024-08-01-preview"
+            }
         )
 
         dict_content = json.loads(response.choices[0].message.content)

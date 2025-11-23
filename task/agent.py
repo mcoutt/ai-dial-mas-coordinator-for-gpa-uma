@@ -33,6 +33,7 @@ class MASCoordinator:
         client: AsyncDial = AsyncDial(
             base_url=self.endpoint,
             api_key=request.api_key,
+            api_version='2025-01-01-preview'
         )
         task_results: list[TaskResult] = []
 
@@ -110,8 +111,7 @@ class MASCoordinator:
                         "schema": TaskDecomposition.model_json_schema()
                     }
                 },
-            },
-            api_version="2024-08-01-preview"
+            }
         )
 
         dict_content = json.loads(response.choices[0].message.content)
